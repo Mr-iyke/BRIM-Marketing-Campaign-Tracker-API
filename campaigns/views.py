@@ -8,17 +8,9 @@ from django.db import models
 
 # Create your views here.
 class CampaignListCreateView(generics.ListCreateAPIView):
+    queryset = Campaign.objects.all()
     serializer_class = CampaignSerializer
     permission_classes = [permissions.IsAuthenticated]
-    def get_queryset(self):
-        queryset = Campaign.objects.all()
-        client_id = self.request.query_params.get('client')
-        status = self.request.query_params.get('status')
-        if client_id:
-            queryset = queryset.filter(client_id=client_id)
-        if status:
-            queryset = queryset.filter(status=status)
-        return queryset
 
      
     
