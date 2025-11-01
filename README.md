@@ -18,6 +18,5 @@ A simple Django REST API to manage clients and their marketing campaigns with au
 ## Setup Instructions
 ```bash
 git clone https://github.com/Mr-iyke/BRIM-Marketing-Campaign-Tracker-API.git
-cd brim-marketing-api
 pip install -r requirements.txt
 python manage.py runserver
